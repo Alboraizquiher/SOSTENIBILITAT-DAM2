@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #2c3e50;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.titulo-grande {
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2.8em;
+    letter-spacing: 2px;
+}
+
+p {
+    color: #555;
+    text-align: center;
+    font-size: 1.2em;
+}
