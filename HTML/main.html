@@ -14,7 +14,59 @@
             <li><a href="#">Contacto</a></li>
         </ul>
     </nav>
+    <!-- Carrusel de imágenes -->
+    <div class="carrusel">
+        <button class="carrusel-btn prev">&#10094;</button>
+        <div class="carrusel-imagenes">
+            <img src="https://via.placeholder.com/800x300?text=Imagen+1" class="carrusel-img active" alt="Imagen 1">
+            <img src="https://via.placeholder.com/800x300?text=Imagen+2" class="carrusel-img" alt="Imagen 2">
+            <img src="https://via.placeholder.com/800x300?text=Imagen+3" class="carrusel-img" alt="Imagen 3">
+        </div>
+        <button class="carrusel-btn next">&#10095;</button>
+    </div>
     <h1 class="titulo-grande">Bienvenido a mi web simple</h1>
     <p>Esta es una página HTML básica creada como ejemplo.</p>
+    <script>
+        // Carrusel automático en JavaScript
+        const imagenes = document.querySelectorAll('.carrusel-img');
+        const prevBtn = document.querySelector('.carrusel-btn.prev');
+        const nextBtn = document.querySelector('.carrusel-btn.next');
+        let indice = 0;
+        let intervalo;
+
+        function mostrarImagen(i) {
+            imagenes.forEach((img, idx) => {
+                img.classList.toggle('active', idx === i);
+            });
+        }
+
+        function siguienteImagen() {
+            indice = (indice + 1) % imagenes.length;
+            mostrarImagen(indice);
+        }
+
+        function anteriorImagen() {
+            indice = (indice - 1 + imagenes.length) % imagenes.length;
+            mostrarImagen(indice);
+        }
+
+        prevBtn.onclick = () => {
+            anteriorImagen();
+            reiniciarIntervalo();
+        };
+
+        nextBtn.onclick = () => {
+            siguienteImagen();
+            reiniciarIntervalo();
+        };
+
+        function reiniciarIntervalo() {
+            clearInterval(intervalo);
+            intervalo = setInterval(siguienteImagen, 3000);
+        }
+
+        // Iniciar carrusel automático
+        intervalo = setInterval(siguienteImagen, 3000);
+    </script>
 </body>
 </html>
