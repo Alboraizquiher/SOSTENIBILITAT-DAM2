@@ -52,6 +52,8 @@ header p {
     color: #555;
     text-align: center;
     font-size: 1.2em;
+    margin-left: 70px;
+    margin-right: 70px;
 }
 article p {
     color: #555;
